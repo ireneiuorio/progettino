@@ -1,1 +1,19 @@
+name: Hello GitHub Actions
+
+on: 
+  push:        # quando fai un push
+    branches: [ "main" ]
+  pull_request:  # oppure quando apri una PR
+    branches: [ "main" ]
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest   # ambiente Linux
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4   # clona il repo
+
+      - name: Say hello
+        run: echo "Hello GitHub Actions! 🎉"
 
